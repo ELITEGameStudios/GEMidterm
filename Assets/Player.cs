@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
             Input.GetAxis("Horizontal"),
             Input.GetAxis("Vertical")
         );
-        
+
         if(moveInput.x != 0){facingDir = moveInput.x;}
 
         // if(Input.GetKeyDown(KeyCode.Space)){Jump();}
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     {
         if(bubbleTimer > 0) return;
 
-        bubbleSpawners[Random.Range(0, bubbleSpawners.Length)].SpawnBubble(moveInput.x);
+        bubbleSpawners[Random.Range(0, bubbleSpawners.Length)].SpawnBubble(moveInput.x, transform.position);
         
         bubbleTimer = bubbleCooldown;
     }

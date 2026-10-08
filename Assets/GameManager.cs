@@ -3,7 +3,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get; private set;}
-    public GameObject winText, loseText, inGameText;
+    public GameObject winText, loseText, inGameText, playerObject;
+    public Transform startpos;
 
     bool isAlive;
     private void Awake() {
@@ -36,7 +37,8 @@ public class GameManager : MonoBehaviour
         
         winText.SetActive(false);
         loseText.SetActive(false);
-
+        playerObject.transform.position = startpos.position;
+        
         StartGame();
     }
     

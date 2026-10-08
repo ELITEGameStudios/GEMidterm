@@ -1,7 +1,6 @@
 using UnityEngine;
 
-
-public class RedBubbleSpawner :MonoBehaviour, IBubbleSpawner
+public class BlueBubbleSpawner :MonoBehaviour, IBubbleSpawner 
 {
     public Color bubbleColor;
     public float time = 5;
@@ -9,6 +8,6 @@ public class RedBubbleSpawner :MonoBehaviour, IBubbleSpawner
     public void SpawnBubble(float directionVal, Vector2 position)
     {
         Bubble bubble = ObjectPooler.Instance.GetBubble();
-        bubble.Setup(bubbleColor, Bubble.BehaviourType.RED, time, position, directionVal);
+        bubble.Setup(bubbleColor, Bubble.BehaviourType.BLUE, time, position, directionVal);
     }
 }
